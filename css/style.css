@@ -1,0 +1,250 @@
+/* style.css - design for all pages (no frameworks) */
+
+/* colors are saved here so I can change them in one place */
+:root {
+  --main: #1f3a5f;
+  --main-dark: #152944;
+  --accent: #2e7d32;
+  --bg: #eef2f7;
+  --error: #c62828;
+  --error-bg: #fdecea;
+  --success: #1b5e20;
+  --success-bg: #e8f5e9;
+}
+
+/* reset, so spacing is easier to control */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: #222;
+}
+
+/* ---------- navigation bar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main);
+  padding: 14px 30px;
+}
+
+.brand {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar nav a {
+  color: #cfd8e6;
+  text-decoration: none;
+  margin-left: 20px;
+  padding-bottom: 4px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+/* ---------- layout ---------- */
+.container {
+  max-width: 440px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+/* the list page needs more space for the table */
+.container.wide {
+  max-width: 900px;
+}
+
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.center {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  color: var(--main);
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* ---------- forms ---------- */
+label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+/* blue border when the input is clicked */
+input:focus {
+  outline: none;
+  border-color: var(--main);
+  box-shadow: 0 0 0 2px rgba(31, 58, 95, 0.2);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: var(--main);
+  color: white;
+  border: 2px solid var(--main);
+  border-radius: 4px;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--main-dark);
+}
+
+/* button that takes the whole width of the form */
+.btn.full {
+  width: 100%;
+  margin-top: 22px;
+}
+
+/* white button with border (for the second button) */
+.btn-outline {
+  background-color: white;
+  color: var(--main);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg);
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* small red delete button in the table */
+.btn-delete {
+  padding: 5px 12px;
+  background-color: var(--error);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #8e0000;
+}
+
+/* ---------- messages (error and success) ---------- */
+.message {
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.message ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.message.error {
+  background-color: var(--error-bg);
+  color: var(--error);
+  border-left: 4px solid var(--error);
+}
+
+.message.success {
+  background-color: var(--success-bg);
+  color: var(--success);
+  border-left: 4px solid var(--success);
+}
+
+/* ---------- small texts ---------- */
+.small-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.small-text a {
+  color: var(--main);
+}
+
+/* ---------- table (list page) ---------- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: var(--main);
+  color: white;
+}
+
+/* every other row has a different color */
+tbody tr:nth-child(even) {
+  background-color: #f5f8fc;
+}
+
+tbody tr:hover {
+  background-color: #e3ebf6;
+}
+
+/* text for the "(you)" tag and when no users found */
+.you-tag {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.empty-row {
+  text-align: center;
+  color: #888;
+}
+
+/* ---------- for phones ---------- */
+@media (max-width: 500px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Student Portal</title>
+
+    <!-- external css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- navigation bar -->
+    <header class="navbar">
+      <span class="brand">Student Portal</span>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html" class="active">Login</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="card">
+        <h1>Login</h1>
+        <p class="subtitle">Enter your email and password.</p>
+
+        <!-- errors or success message will show here (from js) -->
+        <div id="message"></div>
+
+        <form id="loginForm" novalidate>
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="maricar@email.com" />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Your password" />
+
+          <button type="submit" class="btn full">Login</button>
+        </form>
+
+        <p class="small-text">
+          No account yet? <a href="register.html">Register here</a>
+        </p>
+      </div>
+    </main>
+
+    <!-- external js files -->
+    <script src="js/storage.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

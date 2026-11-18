@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List | Student Portal</title>
+
+  <!-- external css -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- navigation bar (logout button is here) -->
+  <header class="navbar">
+    <span class="brand">Student Portal</span>
+    <nav>
+      <a href="list.html" class="active">User List</a>
+      <a href="#" id="logoutLink">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container wide">
+    <div class="card">
+      <h1>Registered Users</h1>
+      <p class="subtitle" id="welcomeText"></p>
+
+      <!-- search box, filters the list while typing -->
+      <input type="text" id="searchBox" placeholder="Search by name or email...">
+
+      <p class="small-text" id="countText"></p>
+
+      <!-- wrapper so the table can scroll on small screens -->
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Date Registered</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <!-- rows are added by list.js -->
+          <tbody id="userTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- external js files -->
+  <script src="js/storage.js"></script>
+  <script src="js/list.js"></script>
+
+</body>
+</html>
